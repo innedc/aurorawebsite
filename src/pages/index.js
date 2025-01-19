@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,7 +18,23 @@ export default function Home() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const totalSlides = Math.ceil(artists.length / 4); // Total number of slides
+  const [itemsPerSlide, setItemsPerSlide] = useState(4); // Default to 4 items per slide
+
+  // This will run once the component is mounted
+  useEffect(() => {
+    // Set the itemsPerSlide based on window size
+    const updateItemsPerSlide = () => {
+      setItemsPerSlide(window.innerWidth <= 768 ? 1 : 4);
+    };
+
+    updateItemsPerSlide(); // Set initial value based on current window size
+    window.addEventListener("resize", updateItemsPerSlide); // Update when window resizes
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener("resize", updateItemsPerSlide);
+  }, []);
+
+  const totalSlides = Math.ceil(artists.length / itemsPerSlide);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -32,7 +48,8 @@ export default function Home() {
     );
   };
 
-  const visibleArtists = artists.slice(currentIndex * 4, currentIndex * 4 + 4);
+  const visibleArtists = artists.slice(currentIndex * itemsPerSlide, currentIndex * itemsPerSlide + itemsPerSlide);
+
 
   return (
     <>
@@ -108,19 +125,19 @@ export default function Home() {
       24/7 radio, and real-time fan interaction. Step into the light and join a
       global community of fans today.
     </p>
-    <div className={styles.ctaContainer}>
-      <button className={styles.ctaButton}>Join Aurora Today</button>
-    </div>
   </div>
   <div className={styles.heroImage}>
     <Image
-      src="/images/filler.png"
+      src="/images/filler2.png"
       alt="Aurora App Mockup"
       width={700}
       height={500}
       className={styles.heroMockup}
     />
   </div>
+  <div className={styles.ctaContainer}>
+      <button className={styles.ctaButton}>Join Aurora Today</button>
+    </div>
 </div>
 
 
@@ -140,17 +157,9 @@ export default function Home() {
         meets. Experience Aurora today!
       </p>
     </div>
-    <div className={styles.imageContainer}>
-      <Image
-        src="/images/filler2.png"
-        alt="About Aurora"
-        width={500}
-        height={500}
-        className={styles.aboutImage}
-      />
-    </div>
   </div>
 </section>
+
 
 {/* Features Section */}
 <section className={styles.featuresSection}>
@@ -190,34 +199,39 @@ export default function Home() {
   </div>
 </section>
 
-{/* Artists Section */}
-<section className={styles.artistsSection}>
-  <h2>Some Of The Artists On Aurora</h2>
-  <div className={styles.artistSliderWrapper}>
-    <button className={`${styles.arrow} ${styles.arrowLeft}`} onClick={handlePrev}>
-      &larr;
-    </button>
-    <div className={styles.artistSlider}>
-      {visibleArtists.map((artist, index) => (
-        <div key={index} className={styles.artistCard}>
-          <Image
-            src={artist.image}
-            alt={artist.name}
-            width={500}
-            height={500}
-          />
-          <div className={styles.artistOverlay}>
-            <p>{artist.name}</p>
-          </div>
+ {/* Artists Section */}
+ <section className={styles.artistsSection}>
+      <h2>Some Of The Artists On Aurora</h2>
+      <div className={styles.artistSliderWrapper}>
+        <button
+          className={`${styles.arrow} ${styles.arrowLeft}`}
+          onClick={handlePrev}
+        >
+          &larr;
+        </button>
+        <div className={styles.artistSlider}>
+          {visibleArtists.map((artist, index) => (
+            <div key={index} className={styles.artistCard}>
+              <Image
+                src={artist.image}
+                alt={artist.name}
+                width={500}
+                height={500}
+              />
+              <div className={styles.artistOverlay}>
+                <p>{artist.name}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-    <button className={`${styles.arrow} ${styles.arrowRight}`} onClick={handleNext}>
-      &rarr;
-    </button>
-  </div>
-</section>
-
+        <button
+          className={`${styles.arrow} ${styles.arrowRight}`}
+          onClick={handleNext}
+        >
+          &rarr;
+        </button>
+      </div>
+    </section>
 
 {/* Testimonials Section */}
 <section className={styles.testimonialsSection}>

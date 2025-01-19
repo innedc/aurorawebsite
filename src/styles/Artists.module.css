@@ -78,46 +78,43 @@
     transform: scale(1.05); /* Slight scaling effect */
   }
 
- /* Responsive styling for smaller screens */
+/* Responsive Design */
 @media (max-width: 768px) {
-    /* Ensure the logo and links remain horizontal */
-    .headerContent {
-      flex-direction: row; /* Align everything in a row */
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    /* Adjust the layout of the links and logo */
-    .logoContainer1 {
-      width: 30%; /* Logo takes 30% of the width */
-    }
-  
-    .headerLinks {
-      width: 70%; /* Links take 70% of the width */
-      justify-content: flex-end; /* Align links to the right */
-    }
-  
-    /* Adjust font size and margins */
-    .aboutLink,
-    .featuresLink,
-    .artistsLink {
-      font-size: 16px; /* Reduce font size */
-      margin-right: 15px; /* Adjust margin */
-    }
-  
-    /* Adjust the download button */
-    .downloadButton {
-      font-size: 14px; /* Smaller font for mobile */
-      padding: 8px 16px; /* Smaller padding for mobile */
-    }
-  
-    /* Reduce header height */
-    .header {
-      height: auto;
-      padding: 10px 15px; /* Less padding on smaller screens */
-    }
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px 10px;
+    height: auto;
   }
-  
+
+  .headerContent {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .logoContainer1 {
+    width: auto;
+  }
+
+  .headerLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .aboutLink,
+  .artistsLink {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+
+  .downloadButton {
+    padding: 8px 15px; /* Smaller padding for compact layout */
+    font-size: 14px;
+    text-align: center;
+  }
+}
 
 
 

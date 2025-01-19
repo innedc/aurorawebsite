@@ -48,7 +48,6 @@
 
 /* Link to About Page */
 .aboutLink,
-.featuresLink,
 .artistsLink {
   color: #54d2cf;
   font-size: 20px;
@@ -60,12 +59,10 @@
 
 /* Hover effect for all links */
 .aboutLink:hover,
-.featuresLink:hover,
 .artistsLink:hover {
   color: #f1f1f1;
   transform: scale(1.1); /* Slight scaling effect */
 }
-
 
 /* Download button */
 .downloadButton {
@@ -87,15 +84,41 @@
   transform: scale(1.05); /* Slight scaling effect */
 }
 
-/* Responsive styling for smaller screens */
+/* Responsive Design */
 @media (max-width: 768px) {
+  .header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5px 10px;
+    height: auto;
+  }
+
   .headerContent {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .logoContainer1 {
+    width: auto;
   }
 
   .headerLinks {
-    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .aboutLink,
+  .artistsLink {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+
+  .downloadButton {
+    padding: 8px 15px; /* Smaller padding for compact layout */
+    font-size: 14px;
+    text-align: center;
   }
 }
 
@@ -104,7 +127,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   background: linear-gradient(
     135deg,
     #000000 0%,
@@ -112,6 +135,7 @@
     #54d2cf 100%
   );
   color: #ffffff;
+  flex-wrap: wrap; /* Allow wrapping */
 }
 
 .heroContent {
@@ -130,29 +154,9 @@
 }
 
 .heroContent p {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   font-size: 1.2rem;
   line-height: 1.5;
-}
-
-.ctaContainer {
-  margin-top: 2rem;
-}
-
-.ctaButton {
-  background-color: #54d2cf;
-  color: #000000;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.ctaButton:hover {
-  background-color: #2e838b;
 }
 
 .heroImage {
@@ -161,13 +165,37 @@
   justify-content: center;
   margin-top: 2rem;
 }
-
 .heroMockup {
-  border-radius: 10px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 1.5s ease;
+  border-radius: 20px;
 }
 
+.ctaContainer {
+  display: flex;
+  justify-content: flex-start; /* Align button to the left */
+  align-items: center; /* Vertically center the button */
+  width: 100%;
+  margin-top: -5rem;
+  margin-bottom: 5rem;
+}
+
+.ctaButton {
+  background-color: #54d2cf;
+  color: #000000;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.ctaButton:hover {
+  background-color: #2e838b;
+}
+
+.logo {
+  display: block;
+  margin-bottom: 1rem;
+}
 
 @keyframes fadeIn {
   from {
@@ -180,41 +208,109 @@
   }
 }
 
-.logoContainer {
-  margin-bottom: 1.5rem;
-}
+/* Responsive Design (Mobile/Tablet) */
+@media (max-width: 768px) {
+  .heroSection {
+    flex-direction: column; /* Stack sections vertically */
+    padding: 3.3rem 1rem; /* Reduced padding for smaller screens */
+  }
 
-.logo {
-  display: block;
-  margin-bottom: 1rem;
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    max-width: 80%; /* Limit the width of the logo */
+    margin-top: 3rem; /* Reduced top margin to decrease space */
+    margin-bottom: 0; /* Reduce space between the logo and the title */
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 300px; /* Limit the logo size */
+    height: auto; /* Ensure the logo scales correctly */
+  }
+
+  .heroContent {
+    margin-right: 0; /* Remove right margin */
+    text-align: center; /* Center text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Adds spacing between the elements */
+  }
+
+  .heroContent h1 {
+    font-size: 1.8rem; /* Scale down the title */
+  }
+
+  /* Center the image */
+  .heroImage {
+    width: 80%; /* Limit the image width */
+    display: block;
+    margin: 1.5rem auto; /* Center the image horizontally and add vertical space */
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+    max-height: 400px; /* Prevent distortion */
+  }
+
+  .heroMockup {
+    width: 100%; /* Ensure the image scales down properly */
+    max-width: 300px; /* Limit the image size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 20px;
+  }
+
+  .heroContent p {
+    font-size: 1rem; /* Adjust text size */
+    margin-top: 1rem; /* Space between the image and the paragraph */
+  }
+
+  .ctaContainer {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Horizontally center the button */
+    align-items: center; /* Vertically center the button */
+    padding: 1rem 0; /* Add padding for spacing */
+    width: 100%; /* Ensure the button container takes full width */
+    margin-top: 5px;
+    margin-bottom: 0.5rem;
+  }
+
+  .ctaButton {
+    font-size: 1rem; /* Adjust font size */
+    padding: 0.75rem 1.5rem; /* Smaller padding for a more compact button */
+    text-align: center; /* Ensure button text is centered */
+    display: inline-block; /* Make sure the button is inline */
+    width: auto; /* Auto width so it's based on content */
+  }
 }
 
 
 
 .aboutSection {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  margin-bottom: 2rem;
   height: 100vh; /* Full viewport height */
-  background-color: #121212; /* Matches the dark theme */
   color: #ffffff; /* Text color */
   background-size: cover;
   background-position: center;
 }
 
 .aboutGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  max-width: 1200px; /* Prevents the content from getting too wide */
+  display: flex;
+  flex-direction: column; /* Ensure the text is stacked vertically */
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+  gap: 2rem; /* Space between elements */
+  max-width: 1200px; /* Prevents content from getting too wide */
   padding: 2rem;
+  width: 100%;
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center; /* Center the text inside the container */
   max-width: 600px;
 }
 
@@ -230,30 +326,42 @@
   margin-bottom: 1.5rem;
 }
 
-.imageContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+/* Responsive Design (Mobile/Tablet) */
+@media (max-width: 768px) {
+  .aboutSection {
+    height: 60vh; /* Reduced height for smaller screens */
+  }
+
+  .aboutGrid {
+    flex-direction: column; /* Stack content in a single column */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+  }
+
+  .textContainer {
+    font-size: 1rem;
+    text-align: center; /* Ensure text is centered */
+  }
+
+  .textContainer h2 {
+    font-size: 2rem; /* Smaller heading on mobile */
+  }
+
+  .textContainer p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
-.aboutImage {
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-  max-width: 100%; /* Ensures image scales down on smaller screens */
-}
-
-
-
-
-
+/* Features Section */
 .featuresSection {
   padding-bottom: 14rem;
-  background-color: #121212; /* Matches the dark theme */
   color: #ffffff;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Keep everything at the top of the section */
+  justify-content: flex-start;
 }
 
 .featuresHeader {
@@ -262,7 +370,7 @@
 
 .featuresHeader h2 {
   font-size: 2.5rem;
-  color: #54D2CF; /* Highlight color */
+  color: #54D2CF;
 }
 
 .featuresHeader p {
@@ -273,25 +381,30 @@
   margin: 0 auto;
 }
 
+.featureContent h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #54D2CF; /* Highlight color */
+}
+
+/* Grid Layout */
 .featuresGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Default 3-column grid */
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  flex-grow: 1; /* Allow grid to take available space */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-grow: 1;
   height: 100%;
 }
 
+/* Feature Block */
 .featureBlock {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: #1e1e1e; /* Slightly lighter dark background */
+  background-color: #1e1e1e;
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -302,40 +415,58 @@
   transform: translateY(-10px);
 }
 
-.featureContent h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #54D2CF; /* Highlight color */
-}
-
-.featureContent p {
-  font-size: 1.1rem;
-  color: #a3a3a3;
-  line-height: 1.6;
-}
-
-
+/* Mobile Responsive */
 @media (max-width: 768px) {
+  .featuresSection {
+    padding-bottom: 5rem;
+  }
+  
+  .featuresHeader h2 {
+    font-size: 2rem;
+    color: #54D2CF;
+  }
+  
+  .featuresHeader p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #a3a3a3;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .featureContent h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #54D2CF; /* Highlight color */
+  }
+  
   .featuresGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: 1fr; /* Stack blocks vertically */
+    gap: 1rem; /* Reduce gap between blocks */
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .featureBlock {
     flex-direction: column;
     text-align: center;
+    box-shadow: none; /* Remove hover effect */
+    transition: none; /* Disable transition */
+    border: 2px solid #54D2CF; /* Add border */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(84, 210, 207, 0.5); /* Glowing border effect */
   }
 }
-
 
 
 
 
 /* Artists Section */
 .artistsSection {
-  padding: 90px 20px;
+  padding: 120px 20px;
   text-align: center;
-  background: linear-gradient(0deg, #000000 0%, #2e838b 50%, #54d2cf 100%); /* Same gradient as Hero Section */
+  background: linear-gradient(0deg, #000000 0%, #2e838b 50%, #54d2cf 100%);
   color: white;
 }
 
@@ -345,7 +476,6 @@
   margin-bottom: 40px;
 }
 
-
 /* Slider Wrapper */
 .artistSliderWrapper {
   display: flex;
@@ -353,6 +483,7 @@
   justify-content: center;
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .artistSlider {
@@ -360,12 +491,12 @@
   gap: 20px;
   transition: transform 0.3s ease-in-out;
   width: 100%;
-  justify-content: space-between; /* Spread out the cards to fill the space */
+  justify-content: space-between;
 }
 
 .artistCard {
-  flex: 1; /* Make each artist card take equal space */
-  max-width: 25%; /* Ensure no card exceeds 25% of the total width */
+  flex: 1;
+  max-width: 25%; /* Adjust this for desktop to show 4 items */
   height: 100%;
   position: relative;
   cursor: pointer;
@@ -379,75 +510,41 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
-  z-index: 1; /* Place image behind the overlay */
+  z-index: 1;
 }
 
 .artistCard:hover img {
-  transform: scale(1.1); /* Slight zoom effect on hover */
+  transform: scale(1.1);
 }
 
 .artistCard:hover {
-  background-color: #54D2CF; /* Change background color to #54D2CF */
+  background-color: #54D2CF;
 }
 
-/* Create the overlay for name visibility */
 .artistOverlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(84, 210, 207, 0.5);   color: #FFFFFF;
+  background: rgba(84, 210, 207, 0.5);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   border-radius: 40px;
   transition: opacity 0.3s ease;
-  z-index: 2; /* Overlay sits above the image */
+  z-index: 2;
 }
 
 .artistCard:hover .artistOverlay {
-  opacity: 1; /* Show overlay on hover */
+  opacity: 1;
 }
 
 .artistOverlay p {
   font-size: 1.5rem;
   font-weight: bold;
-}
-
-/* Adjust the position of the arrows */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.arrowLeft {
-  left: 0;
-}
-
-.arrowRight {
-  right: 0;
-}
-
-.arrow:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-@media (max-width: 768px) {
-  .artistSlider {
-    flex-direction: column;
-  }
-  .artistCard {
-    max-width: 100%;
-  }
 }
 
 /* Navigation Arrows */
@@ -459,13 +556,13 @@
   font-size: 2rem;
   cursor: pointer;
   z-index: 10;
-  background-color: transparent; /* No background initially */
+  background-color: transparent;
   border: none;
   transition: background-color 0.3s ease;
 }
 
 .arrow:hover {
-  background-color: rgba(0, 0, 0, 0.7); /* Background on hover */
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
 }
 
@@ -477,6 +574,30 @@
   right: 10px;
 }
 
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .artistsSection {
+    padding: 150px 20px 150px;
+  }
+  .artistsSection h2 {
+    font-size: 2rem;
+  }
+  .artistSlider {
+    width: 300%; /* Set width of the slider to 3 times the card width */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .artistCard {
+    max-width: 100%;
+    flex: 0 0 100%; /* Force each card to take full width */
+  }
+
+  .artistSliderWrapper {
+    overflow: hidden;
+  }
+
+}
+  
 
 
 /* Testimonials Section */
@@ -493,12 +614,10 @@
   font-size: 2.5rem;
   color: #54D2CF;
   margin-bottom: 40px;
-  text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
   position: relative;
   z-index: 2;
-  animation: fadeInGlow 2s ease-in-out;
 }
 
 .testimonialsGrid {
@@ -563,26 +682,30 @@
   color: #fff; /* Change name color on hover */
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
+  .testimonialsSection h2 {
+    font-size: 2rem;
+  }
   .testimonialsGrid {
     flex-direction: column;
     align-items: center;
+    gap: 4rem; /* Add gap between the cards */
   }
 
   .testimonialCard {
     width: 250px;
     height: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 15px #54D2CF; /* Add shadow with #54D2CF color */
+    pointer-events: none; /* Disable click functionality */
   }
-}
 
-@keyframes fadeInGlow {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+  .testimonialCard p {
+    color: #54D2CF; /* Set p color to #54D2CF on mobile */
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .testimonialCard h4 {
+    color: white; /* Set h4 color to white on mobile */
   }
 }
 
@@ -638,6 +761,12 @@
 .ctaButton:hover {
   background-color: #2e838b;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .ctaSection h2 {
+    font-size: 2rem;
+  }
 }
 
 /* Footer */
