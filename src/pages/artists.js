@@ -11,47 +11,50 @@ const artists = [
   },
   {
     name: 'MICO',
-    image: '/images/artist2.jpg', // Replace with the actual image path
+    image: '/images/mico.jpg', // Replace with the actual image path
   },
   {
     name: 'Jeff Satur',
-    image: '/images/artist3.jpg', // Replace with the actual image path
+    image: '/images/jeffsatur.jpg', // Replace with the actual image path
   },
   {
-    name: 'Kiss of life',
-    image: '/images/boynextdoor.jpg', // Replace with the actual image path
-  },
-  {
-    name: 'Grace Abrams',
-    image: '/images/artist5.jpg', // Replace with the actual image path
-  },
-  {
-    name: 'aespa',
-    image: '/images/ateez.jpg', // Replace with the actual image path
+    name: 'LYKN',
+    image: '/images/lykn.jpg', // Replace with the actual image path
   },
   {
     name: 'BOYNEXTDOOR',
-    image: '/images/ateez.jpg', // Replace with the actual image path
+    image: '/images/boynextdoor.jpg', // Replace with the actual image path
+  },
+  {
+    name: '8TURN',
+    image: '/images/8turn.jpg', // Replace with the actual image path
+  },
+  {
+    name: 'aespa',
+    image: '/images/aespa.jpg', // Replace with the actual image path
+  },
+ 
+  {
+    name: 'Gracie Abrams',
+    image: '/images/gracieabrams.jpg', // Replace with the actual image path
   },
   {
     name: 'Xikers',
-    image: '/images/ateez.jpg', // Replace with the actual image path
+    image: '/images/xikers.jpg', // Replace with the actual image path
   },
   {
     name: 'Wave To Earth',
-    image: '/images/ateez.jpg', // Replace with the actual image path
+    image: '/images/wavetoearth.jpg', // Replace with the actual image path
+  },
+  {
+    name: 'LUCY',
+    image: '/images/lucy.jpg', // Replace with the actual image path
   },
   {
     name: 'CHUNG HA',
-    image: '/images/ateez.jpg', // Replace with the actual image path
-  },{
-    name: 'PiXXie',
-    image: '/images/ateez.jpg', // Replace with the actual image path
+    image: '/images/chungha.jpeg', // Replace with the actual image path
   },
-  {
-    name: 'Day6',
-    image: '/images/ateez.jpg', // Replace with the actual image path
-  },
+ 
 ];
 
 export default function Artists() {

@@ -43,7 +43,7 @@
   .artistsLink {
     color: #54d2cf;
     font-size: 20px;
-    margin-right: 20px; /* Slightly bigger margin for balance */
+    margin-right: 40px; /* Slightly bigger margin for balance */
     text-decoration: none;
     font-weight: 500; /* Slightly bold */
     transition: color 0.3s ease, transform 0.3s ease;
@@ -118,60 +118,62 @@
     }
   }
   
+
+
+
   .artistsContent {
     padding: 20px;
     text-align: center;
-      background: linear-gradient(360deg, #54d2cf 0%, #2e838b 40%, #000000 100%); /* Same gradient as Hero Section */
+    background: linear-gradient(360deg, #54d2cf 0%, #2e838b 40%, #000000 100%); /* Same gradient as Hero Section */
+}
 
-  }
-  
-  .artistsContent h1 {
+.artistsContent h1 {
     font-size: 40px;
     color: #54D2CF;
     margin-top: 6rem;
     margin-bottom: 10px;
-  }
-  
-  .artistsContent p {
+}
+
+.artistsContent p {
     font-size: 18px;
     margin-bottom: 20px;
-  }
-  
-  .artistsGrid {
+}
+
+.artistsGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 artists per row */
     gap: 2rem;
     margin-top: 70px;
     margin-left: 60px;
     margin-right: 60px;
-  }
-  
-  .artistCard {
+}
+
+.artistCard {
     position: relative;
     cursor: pointer;
     overflow: hidden;
     border-radius: 40px;
     transition: background-color 0.3s ease;
-    margin-bottom: 20px;
-  }
-  
-  .artistImage {
+    aspect-ratio: 1 / 1; /* Ensures the card is square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image display */
+.artistImage {
     border-radius: 40px;
     object-fit: cover;
     width: 100%;
-    height: 100%; /* Ensures the image is square */
+    height: 100%;
     transition: transform 0.3s ease;
-  }
-  
-  .artistCard:hover .artistImage {
+}
+
+/* Hover effect */
+.artistCard:hover .artistImage {
     transform: scale(1.1); /* Slight zoom effect on hover */
-  }
-  
-  .artistCard:hover {
-    background-color: #54D2CF; /* Change background color to #54D2CF */
-  }
-  
-/* Overlay to display the artist name */
+}
+
 .artistOverlay {
     position: absolute;
     top: 0;
@@ -184,21 +186,22 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    border-radius: 10px;
+    border-radius: 40px;
     transition: opacity 0.3s ease;
-  }
-  
-  
-  .artistCard:hover .artistOverlay {
+}
+
+.artistCard:hover .artistOverlay {
     opacity: 1; /* Show overlay on hover */
-  }
-  
-  .artistOverlay p {
+}
+
+.artistOverlay p {
     font-size: 1.5rem;
     font-weight: bold;
-  }
+}
 
-  .moreArtists p {
+
+/* 'And many more' section styling */
+.moreArtists p {
     font-size: 1.8rem;
     margin: 0;
     margin-top: 20px;
@@ -208,15 +211,16 @@
     padding: 16px;
     text-transform: uppercase;
     letter-spacing: 2px;
-  }
+}
 
-  .ctaButtons {
+/* Call to action button styling */
+.ctaButtons {
     display: flex;
     justify-content: center;
     gap: 20px;
-  }
-  
-  .ctaButton {
+}
+
+.ctaButton {
     padding: 15px 25px;
     font-size: 18px;
     font-weight: bold;
@@ -225,17 +229,18 @@
     cursor: pointer;
     border-radius: 20px;
     transition: all 0.3s ease;
-  }
-  
-  .ctaButton {
+}
+
+.ctaButton {
     background-color: #fff;
     color: #54d2cf;
-  }
-  
-  .ctaButton:hover {
+}
+
+.ctaButton:hover {
     background-color: #2e838b;
     color: #fff;
-  }
+}
+
   /* Footer */
 .footer {
     padding: 20px;

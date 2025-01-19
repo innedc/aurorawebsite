@@ -52,7 +52,7 @@
 .artistsLink {
   color: #54d2cf;
   font-size: 20px;
-  margin-right: 20px; /* Slightly bigger margin for balance */
+  margin-right: 40px; /* Slightly bigger margin for balance */
   text-decoration: none;
   font-weight: 500; /* Slightly bold */
   transition: color 0.3s ease, transform 0.3s ease;
@@ -585,8 +585,6 @@
     transform: translateY(0);
   }
 }
-
-
 
 
 /* CTA Section */

@@ -42,7 +42,7 @@ export default function About() {
 
       {/* About Page Content */}
       <div className={styles.aboutContent}>
-        <h1>About the Creator</h1>
+        <h1>About the creator</h1>
         <div className={styles.creatorContainer}>
           <div className={styles.creatorText}>
             <div className={styles.textBox}>
@@ -61,8 +61,8 @@ export default function About() {
             <Image
               src="/images/about.jpeg" // Replace with the creator's image
               alt="Creator's Image"
-              width={300}
-              height={300}
+              width={400}
+              height={400}
               className={styles.creatorImage}
             />
           </div>

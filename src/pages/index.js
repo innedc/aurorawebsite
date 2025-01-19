@@ -7,13 +7,14 @@ import styles from "@/styles/Home.module.css";
 export default function Home() {
   const artists = [
     { name: "ATEEZ", image: "/images/ateez.jpg" },
-    { name: "MICO", image: "/images/bts.jpg" },
-    { name: "Jeff Satur", image: "/images/seventeen.jpg" },
-    { name: "Kiss Of life", image: "/images/straykids.jpg" },
-    { name: "Grace Abrams", image: "/images/txt.jpg" },
-    { name: "LYKN", image: "/images/shinee.jpg" },
-    { name: "aespa", image: "/images/enhypen.jpg" },
+    { name: "MICO", image: "/images/mico.jpg" },
+    { name: "Jeff Satur", image: "/images/jeffsatur.jpg" },
+    { name: "LYKN", image: "/images/lykn.jpg" },
     { name: "BOYNEXTDOOR", image: "/images/boynextdoor.jpg" },
+    { name: "8TURN", image: "/images/8turn.jpg" },
+    { name: "aespa", image: "/images/aespa.jpg" },
+    { name: "Gracie Abrams", image: "/images/gracieabrams.jpg" },
+
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -115,7 +116,7 @@ export default function Home() {
     <Image
       src="/images/filler.png"
       alt="Aurora App Mockup"
-      width={500}
+      width={700}
       height={500}
       className={styles.heroMockup}
     />
@@ -143,8 +144,8 @@ export default function Home() {
       <Image
         src="/images/filler2.png"
         alt="About Aurora"
-        width={600}
-        height={400}
+        width={500}
+        height={500}
         className={styles.aboutImage}
       />
     </div>
@@ -191,7 +192,7 @@ export default function Home() {
 
 {/* Artists Section */}
 <section className={styles.artistsSection}>
-  <h2>Artists on Aurora</h2>
+  <h2>Some Of The Artists On Aurora</h2>
   <div className={styles.artistSliderWrapper}>
     <button className={`${styles.arrow} ${styles.arrowLeft}`} onClick={handlePrev}>
       &larr;
@@ -225,19 +226,19 @@ export default function Home() {
     <div className={styles.testimonialCard}>
       <div className={styles.testimonialContent}>
         <p>&quot;Aurora has brought me closer to my idols than ever before!&quot;</p>
-        <h4>- Alex, 21</h4>
+        <h4>- Mallow, 21</h4>
       </div>
     </div>
     <div className={styles.testimonialCard}>
       <div className={styles.testimonialContent}>
         <p>&quot;I love being able to vote for songs and chat with fans during radio sessions.&quot;</p>
-        <h4>- Jamie, 19</h4>
+        <h4>- Reese, 19</h4>
       </div>
     </div>
     <div className={styles.testimonialCard}>
       <div className={styles.testimonialContent}>
         <p>&quot;The exclusive content makes me feel like I&apos;m part of something special.&quot;</p>
-        <h4>- Taylor, 23</h4>
+        <h4>- Emma, 23</h4>
       </div>
     </div>
   </div>

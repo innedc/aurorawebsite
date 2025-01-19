@@ -44,7 +44,7 @@
   .artistsLink {
     color: #54d2cf;
     font-size: 20px;
-    margin-right: 20px; /* Slightly bigger margin for balance */
+    margin-right: 40px; /* Slightly bigger margin for balance */
     text-decoration: none;
     font-weight: 500; /* Slightly bold */
     transition: color 0.3s ease, transform 0.3s ease;
@@ -120,7 +120,7 @@
   
 /* About.module.css */
 .aboutContent {
-    padding: 100px 20px;
+    padding: 100px 10px;
     text-align: center;
     background: linear-gradient(360deg, #54d2cf 0%, #2e838b 40%, #000000 100%); /* Same gradient as Hero Section */
 
@@ -130,7 +130,7 @@
     margin-top: 30px;
     font-size: 32px;
     color: #54D2CF;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     margin-left: 13rem;
   }
   
