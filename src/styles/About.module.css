@@ -1,0 +1,254 @@
+/* Header */
+.header {
+    position: fixed;
+    top: 5px; /* Small gap between the top of the page */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000; /* Gradient background */
+    border-radius: 25px;
+    width: 90%;
+    padding: 5px 20px; /* Reduced padding for a smaller height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    height: 70px; /* Set a fixed smaller height */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  }
+  
+  /* Container for the logo and links */
+  .headerContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo container */
+  .logoContainer1 {
+    display: flex;
+    width: 50%;
+    padding-top: 0;
+  }
+  
+  /* Header links */
+  .headerLinks {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Link to About Page */
+  .aboutLink,
+  .featuresLink,
+  .artistsLink {
+    color: #54d2cf;
+    font-size: 20px;
+    margin-right: 20px; /* Slightly bigger margin for balance */
+    text-decoration: none;
+    font-weight: 500; /* Slightly bold */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for all links */
+  .aboutLink:hover,
+  .featuresLink:hover,
+  .artistsLink:hover {
+    color: #f1f1f1;
+    transform: scale(1.1); /* Slight scaling effect */
+  }
+  
+  
+  /* Download button */
+  .downloadButton {
+    padding: 10px 20px;
+    background-color: #2e838b;
+    border: none;
+    border-radius: 20px;
+    color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for Download button */
+  .downloadButton:hover {
+    background-color: #f1f1f1;
+    color: #2e838b;
+    transform: scale(1.05); /* Slight scaling effect */
+  }
+ /* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    /* Ensure the logo and links remain horizontal */
+    .headerContent {
+      flex-direction: row; /* Align everything in a row */
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    /* Adjust the layout of the links and logo */
+    .logoContainer1 {
+      width: 30%; /* Logo takes 30% of the width */
+    }
+  
+    .headerLinks {
+      width: 70%; /* Links take 70% of the width */
+      justify-content: flex-end; /* Align links to the right */
+    }
+  
+    /* Adjust font size and margins */
+    .aboutLink,
+    .featuresLink,
+    .artistsLink {
+      font-size: 16px; /* Reduce font size */
+      margin-right: 15px; /* Adjust margin */
+    }
+  
+    /* Adjust the download button */
+    .downloadButton {
+      font-size: 14px; /* Smaller font for mobile */
+      padding: 8px 16px; /* Smaller padding for mobile */
+    }
+  
+    /* Reduce header height */
+    .header {
+      height: auto;
+      padding: 10px 15px; /* Less padding on smaller screens */
+    }
+  }
+  
+/* About.module.css */
+.aboutContent {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(360deg, #54d2cf 0%, #2e838b 40%, #000000 100%); /* Same gradient as Hero Section */
+
+  }
+  
+  .aboutContent h1 {
+    margin-top: 30px;
+    font-size: 32px;
+    color: #54D2CF;
+    margin-bottom: 25px;
+    margin-left: 13rem;
+  }
+  
+  .creatorContainer {
+    display: flex;
+    flex-direction: row-reverse; /* Reversed to put the image on the right */
+    justify-content: center;
+    align-items: center;    
+  }
+  
+  .creatorImageContainer {
+    flex: 1; /* Takes up equal space */
+    display: flex;
+    justify-content: center; /* Center image inside container */
+  }
+  
+  .creatorImage {
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.9), 0 0 30px #54d2cf; /* Add glow effect */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the glow effect */
+  }
+  
+  
+  .creatorText {
+    flex: 2; /* Takes up more space compared to the image */
+    text-align: left;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.6;
+  }
+  
+  .textBox {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Limits the width of the text box */
+    margin: 0 auto;
+  }
+  
+  .creatorText p {
+    margin-bottom: 20px;
+  }
+
+
+ /* Contact and Portfolio Container */
+.contactPortfolioContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 40px 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+  
+  /* Shared styles for Contact and Portfolio cards */
+  .contact,
+  .portfolio {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    background-color: #1a1a1a; /* Subtle dark background */
+    border: 1px solid #2e838b; /* Initial border color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect for Contact and Portfolio */
+  .contact:hover,
+  .portfolio:hover {
+    transform: translateY(-10px); /* Lift card slightly */
+    border-color: #54d2cf; /* Change border color */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 4px 15px #54d2cf; /* Add glow */
+  }
+  
+  /* Titles for both sections */
+  .contact h2,
+  .portfolio h2 {
+    font-size: 26px;
+    color: #54d2cf; /* Detail color for headers */
+    margin-bottom: 20px;
+  }
+  
+  /* Description text */
+  .contact p,
+  .portfolio p {
+    font-size: 18px;
+    color: #d1d1d1;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Links */
+  .contactLink,
+  .portfolioLink {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #2e838b;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect for Links */
+  .contactLink:hover,
+  .portfolioLink:hover {
+    background-color: #54d2cf; /* Change button color */
+    transform: scale(1.1); /* Slightly enlarge */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 2px 8px #54d2cf; /* Subtle glow */
+  }
+  
+  /* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #54d2cf;
+  }

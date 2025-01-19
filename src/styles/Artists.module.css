@@ -1,0 +1,244 @@
+.header {
+    position: fixed;
+    top: 5px; /* Small gap between the top of the page */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000; /* Gradient background */
+    border-radius: 25px;
+    width: 90%;
+    padding: 5px 20px; /* Reduced padding for a smaller height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    height: 70px; /* Set a fixed smaller height */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  }
+  
+  /* Container for the logo and links */
+  .headerContent {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Logo container */
+  .logoContainer1 {
+    display: flex;
+    width: 50%;
+    padding-top: 0;
+  }
+  
+  /* Header links */
+  .headerLinks {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Link to About Page */
+  .aboutLink,
+  .featuresLink,
+  .artistsLink {
+    color: #54d2cf;
+    font-size: 20px;
+    margin-right: 20px; /* Slightly bigger margin for balance */
+    text-decoration: none;
+    font-weight: 500; /* Slightly bold */
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for all links */
+  .aboutLink:hover,
+  .featuresLink:hover,
+  .artistsLink:hover {
+    color: #f1f1f1;
+    transform: scale(1.1); /* Slight scaling effect */
+  }
+  
+  
+  /* Download button */
+  .downloadButton {
+    padding: 10px 20px;
+    background-color: #2e838b;
+    border: none;
+    border-radius: 20px;
+    color: #f1f1f1;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for Download button */
+  .downloadButton:hover {
+    background-color: #f1f1f1;
+    color: #2e838b;
+    transform: scale(1.05); /* Slight scaling effect */
+  }
+
+ /* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    /* Ensure the logo and links remain horizontal */
+    .headerContent {
+      flex-direction: row; /* Align everything in a row */
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    /* Adjust the layout of the links and logo */
+    .logoContainer1 {
+      width: 30%; /* Logo takes 30% of the width */
+    }
+  
+    .headerLinks {
+      width: 70%; /* Links take 70% of the width */
+      justify-content: flex-end; /* Align links to the right */
+    }
+  
+    /* Adjust font size and margins */
+    .aboutLink,
+    .featuresLink,
+    .artistsLink {
+      font-size: 16px; /* Reduce font size */
+      margin-right: 15px; /* Adjust margin */
+    }
+  
+    /* Adjust the download button */
+    .downloadButton {
+      font-size: 14px; /* Smaller font for mobile */
+      padding: 8px 16px; /* Smaller padding for mobile */
+    }
+  
+    /* Reduce header height */
+    .header {
+      height: auto;
+      padding: 10px 15px; /* Less padding on smaller screens */
+    }
+  }
+  
+  .artistsContent {
+    padding: 20px;
+    text-align: center;
+      background: linear-gradient(360deg, #54d2cf 0%, #2e838b 40%, #000000 100%); /* Same gradient as Hero Section */
+
+  }
+  
+  .artistsContent h1 {
+    font-size: 40px;
+    color: #54D2CF;
+    margin-top: 6rem;
+    margin-bottom: 10px;
+  }
+  
+  .artistsContent p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .artistsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 artists per row */
+    gap: 2rem;
+    margin-top: 70px;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  
+  .artistCard {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 40px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+  }
+  
+  .artistImage {
+    border-radius: 40px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%; /* Ensures the image is square */
+    transition: transform 0.3s ease;
+  }
+  
+  .artistCard:hover .artistImage {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
+  
+  .artistCard:hover {
+    background-color: #54D2CF; /* Change background color to #54D2CF */
+  }
+  
+/* Overlay to display the artist name */
+.artistOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(84, 210, 207, 0.5); /* Semi-transparent background */
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+  }
+  
+  
+  .artistCard:hover .artistOverlay {
+    opacity: 1; /* Show overlay on hover */
+  }
+  
+  .artistOverlay p {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .moreArtists p {
+    font-size: 1.8rem;
+    margin: 0;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    position: relative;
+    padding: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .ctaButtons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .ctaButton {
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .ctaButton {
+    background-color: #fff;
+    color: #54d2cf;
+  }
+  
+  .ctaButton:hover {
+    background-color: #2e838b;
+    color: #fff;
+  }
+  /* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #54d2cf;
+  }
