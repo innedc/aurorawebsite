@@ -552,6 +552,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  color: white;
   padding: 10px;
   font-size: 2rem;
   cursor: pointer;
@@ -568,10 +569,12 @@
 
 .arrowLeft {
   left: 10px;
+  color: white;
 }
 
 .arrowRight {
   right: 10px;
+  color: white;
 }
 
 /* Mobile Responsive */

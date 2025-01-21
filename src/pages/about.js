@@ -30,8 +30,8 @@ export default function About() {
       </Link>
     </div>
     <div className={styles.headerLinks}>
-      <a href="/artists" className={styles.artistsLink}>Artists</a>
-      <a href="/about" className={styles.aboutLink}>About</a>
+      <Link href="/artists" className={styles.artistsLink}>Artists</Link>
+      <Link href="/about" className={styles.aboutLink}>About</Link>
 
       <button className={styles.downloadButton}>Download now</button>
     </div>
@@ -91,9 +91,6 @@ export default function About() {
       Explore more of my work and creative projects. Let’s collaborate or get inspired!
     </p>
     <a
-      href="https://your-portfolio-link.com"
-      target="_blank"
-      rel="noopener noreferrer"
       className={styles.portfolioLink}
     >
       Visit Portfolio
