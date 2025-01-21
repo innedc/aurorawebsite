@@ -84,8 +84,8 @@ export default function Artists() {
       </Link>
     </div>
     <div className={styles.headerLinks}>
-      <a href="/artists" className={styles.artistsLink}>Artists</a>
-      <a href="/about" className={styles.aboutLink}>About</a>
+      <Link href="/artists" className={styles.artistsLink}>Artists</Link>
+      <Link href="/about" className={styles.aboutLink}>About</Link>
       <button className={styles.downloadButton}>Download now</button>
     </div>
   </div>

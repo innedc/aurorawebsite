@@ -75,8 +75,8 @@ export default function Home() {
       />
     </div>
     <div className={styles.headerLinks}>
-      <a href="/about" className={styles.aboutLink}>About</a>
-      <a href="/artists" className={styles.artistsLink}>Artists</a>
+      <Link href="/about" className={styles.aboutLink}>About</Link>
+      <Link href="/artists" className={styles.artistsLink}>Artists</Link>
       <button className={styles.downloadButton}>Download now</button>
     </div>
   </div>
@@ -95,9 +95,8 @@ export default function Home() {
       />
     </div>
     <div className={styles.headerLinks}>
-      <a href="/artists" className={styles.artistsLink}>Artists</a> 
-      <a href="/about" className={styles.aboutLink}>About</a>
-
+      <Link href="/artists" className={styles.artistsLink}>Artists</Link> 
+      <Link href="/about" className={styles.aboutLink}>About</Link>
       <button className={styles.downloadButton}>Download now</button>
     </div>
   </div>
@@ -128,7 +127,7 @@ export default function Home() {
   </div>
   <div className={styles.heroImage}>
     <Image
-      src="/images/filler2.png"
+      src="/images/websitemockup.png"
       alt="Aurora App Mockup"
       width={700}
       height={500}
